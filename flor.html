@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Una flor para ti</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: #d621cd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", sans-serif;
+      flex-direction: column;
+    }
+
+    .flor {
+      font-size: 400px;
+      animation: latir 1.5s infinite;
+    }
+
+    @keyframes latir {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    h2 {
+      color: #d63384;
+      margin-top: 20px;
+    }
+    .frase {
+  margin-top: 30px;
+  max-width: 600px;
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #f9fdff;
+  font-style: italic;
+  border-top: 2px solid #ffa8c5;
+}
+
+  </style>
+</head>
+<body>
+  <div class="flor">🌸</div>
+
+  <div class="frase" id="frase"></div>
+  <script>
+  const texto = "Como una flor que da vida con su fragancia y belleza, así eres tú, mamá: siempre firme, siempre amorosa, llenando cada rincón de mi mundo con tu ternura, tu fuerza y tu incondicional amor 🌸.";
+  const elemento = document.getElementById("frase");
+  let i = 0;
+
+  function escribir() {
+    if (i < texto.length) {
+      elemento.innerHTML += texto.charAt(i);
+      i++;
+      setTimeout(escribir, 50); // velocidad de escritura
+    }
+  }
+
+  escribir();
+</script>
+</body>
+</html>
